@@ -16,8 +16,8 @@ let answer = new Schema({
         type: Number
     },
     created_date: {
-        type : Date,
-        default : Date.now()
+        type : String,
+        default : date
     },
     question: {
         type: mongoose.Schema.Types.ObjectId,
