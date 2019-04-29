@@ -102,7 +102,7 @@ class QuestionAnswerPage extends Component {
           </thead>
           <tbody />
         </table>
-
+        <h3>Answers</h3>
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>
             <tr>
