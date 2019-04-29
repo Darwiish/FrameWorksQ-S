@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ListOfQuestion from "./components/ListOfQuestion";
 import QuestionPage from "./components/QuestionPage";
-import UpdateQuestion from "./components/UpdateQuestion";
 import QuestionAnswerPage from "./components/QuestionAnswerPage";
 
 import logo from "./logo.svg";
@@ -36,7 +35,6 @@ class App extends Component {
           <br />
           <Switch>
             <Route path="/" exact component={QuestionPage} />
-            <Route path="/upDate/:id" component={UpdateQuestion} />
             <Route path="/post/" component={QuestionPage} />
             <Route path="/QList/" component={ListOfQuestion} />
             <Route
