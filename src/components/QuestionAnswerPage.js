@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Votes from "./Votes";
 
 const Answer = props => (
   <tr>
     <td>{props.answers.name}</td>
     <td>{props.answers.input}</td>
     <td>{props.answers.created_date}</td>
+    <td>{props.answers.votes} <Votes id={props.answers._id} votes={props.answers.votes}/></td>
   </tr>
 );
 
@@ -41,7 +43,8 @@ class QuestionAnswerPage extends Component {
       name: this.state.name,
       input: this.state.input,
       created_date: this.state.created_date,
-      replyTo: this.props.match.params.id
+      replyTo: this.props.match.params.id,
+      votes: 0
     };
 
     axios
@@ -51,7 +54,8 @@ class QuestionAnswerPage extends Component {
     this.setState({
       name: "",
       input: "",
-      replyTo: this.props.match.params.id
+      replyTo: this.props.match.params.id,
+      votes: 0
     });
   };
   componentDidMount() {
@@ -61,7 +65,7 @@ class QuestionAnswerPage extends Component {
     axios.get("http://localhost:4000/questions/").then(response => {
       this.setState({
         currentQuestion: response.data.find(
-          elm => elm._id == this.props.match.params.id
+          elm => elm._id === this.props.match.params.id
         )
       });
     });
@@ -109,6 +113,7 @@ class QuestionAnswerPage extends Component {
               <th>Name</th>
               <th>input</th>
               <th>DateTime</th>
+              <th>Votes</th>
             </tr>
           </thead>
           <tbody>{this.ALLAnswer()}</tbody>

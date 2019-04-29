@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+let date = new Date().toLocaleString();
+
 let question = new Schema({
         name: {
         type: String
@@ -12,8 +14,8 @@ let question = new Schema({
         type: String
     },
         created_date: {
-        type : Date,
-        default : Date.now()
+        type : String,
+        default : date
     }
 });
 

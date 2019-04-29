@@ -12,6 +12,9 @@ let answer = new Schema({
     replyTo: {
         type: String
     },
+    votes: {
+        type: Number
+    },
     created_date: {
         type : Date,
         default : Date.now()
