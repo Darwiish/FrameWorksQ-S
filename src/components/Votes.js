@@ -10,7 +10,7 @@ class Votes extends Component {
 
   addVote(value) {
     // const URL = process.env.REACT_APP_API_ANSWERS;
-    const URL = `http://localhost:4000/answers/${this.props.id}`;
+    const URL = `http://localhost:4000/api/answers/${this.props.id}`;
 
     let body = {
       answer_id: this.props.id,
@@ -27,8 +27,8 @@ class Votes extends Component {
       .then(response => response.json())
       .then(response => console.log(response))
       .then(vote => {
-        // console.log(`Before: ${this.props.votes}`);
-        // console.log(`After: ${this.props.votes + value}`);
+        console.log(`Before: ${this.props.votes}`);
+        console.log(`After: ${this.props.votes + value}`);
       });
   }
 

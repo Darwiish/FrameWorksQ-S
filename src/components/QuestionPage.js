@@ -46,7 +46,7 @@ class QuestionPage extends Component {
       input: this.state.input,
     };
  
-    axios.post('http://localhost:4000/questions/add', newQuestion)
+    axios.post('http://localhost:4000/api/questions/add', newQuestion)
             .then(res => console.log(res.data));
 
     this.setState({

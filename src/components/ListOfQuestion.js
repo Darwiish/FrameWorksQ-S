@@ -7,14 +7,10 @@ const Question = props => (
     <td>{props.question.name}</td>
     <td>{props.question.title}</td>
     <td>{props.question.input}</td>
-    <td>{`${new Date(props.question.created_date).toISOString().slice(0, 10)}${new Date(props.question.created_date).toISOString().slice(11, 16)}`}</td> 
-
+    <td>{props.question.created_date}</td>
     <td>
        <Link to={"/QAnswer/" + props.question._id}>Replay</Link>
     </td>
-    {/* <td>
-      <Link to={"/edit/" + props.question._id}>Edit</Link>
-    </td> */}
   </tr>
 );
 
@@ -26,7 +22,7 @@ class ListOfQuestion extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/questions/")
+      .get("http://localhost:4000/api/questions/")
       .then(response => {
         this.setState({ questions: response.data });
       })

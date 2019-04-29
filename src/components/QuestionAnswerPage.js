@@ -48,7 +48,7 @@ class QuestionAnswerPage extends Component {
     };
 
     axios
-      .post("http://localhost:4000/answers/add", newAnswer)
+      .post("http://localhost:4000/api/answers/add", newAnswer)
       .then(res => console.log(res.data));
 
     this.setState({
@@ -62,7 +62,7 @@ class QuestionAnswerPage extends Component {
     this.setState({
       replyTo: this.props.match.params.id
     });
-    axios.get("http://localhost:4000/questions/").then(response => {
+    axios.get("http://localhost:4000/api/questions/").then(response => {
       this.setState({
         currentQuestion: response.data.find(
           elm => elm._id === this.props.match.params.id
@@ -71,7 +71,7 @@ class QuestionAnswerPage extends Component {
     });
 
     axios
-      .get("http://localhost:4000/answers/")
+      .get("http://localhost:4000/api/answers/")
       .then(response => {
         this.setState({ answers: response.data });
       })

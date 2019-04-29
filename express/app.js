@@ -37,19 +37,19 @@ app.use((req, res, next) => {
 
 
 /****** Routes *****/
-app.get("/questions", (req, res) => {
+app.get("/api/questions", (req, res) => {
   Question.find((err, questions) => {
     res.json(questions);
   });
 });
 
-app.get("/questions/:id", (req, res) => {
+app.get("/api/questions/:id", (req, res) => {
   Question.findById(req.params.id, (err, question) => {
     res.json(question);
   });
 });
 
-app.post("/questions/add", (req, res) => {
+app.post("/api/questions/add", (req, res) => {
   let question = new Question(req.body);
   question.save().then(question => {
     if (err) {
@@ -59,40 +59,40 @@ app.post("/questions/add", (req, res) => {
   });
 });
 
-app.put("/questions/:id", (req, res) => {
+app.put("/api/questions/:id", (req, res) => {
   res.json(getQuestionFromId(req.params.id));
 });
 
-/////////////////////////////Answer//////////////////////////////////////////
 
-app.get("/answers", (req, res) => {
+
+app.get("/api/answers", (req, res) => {
   Answer.find((err, answers) => {
     res.json(answers);
   });
 });
 
-app.get("/answers/:id", (req, res) => {
+app.get("/api/answers/:id", (req, res) => {
   Answer.findById(req.params.id, (err, answer) => {
     res.json(answer);
   });
 });
 
-app.get("/questions/:id/answers", (req, res) => {
+app.get("/api/questions/:id/answers", (req, res) => {
   Answer.find((err, answers) => {
     res.json(answers);
   });
 });
 
-app.put('/answers/:id', (req, res) => {
+app.put('/api/answers/:id', (req, res) => {
   Answer.findOneAndUpdate({ _id: req.body.answer_id }, req.body, { new: true })
     .then(function(vote) {
       res.send(vote);
     })
-    .then(console.log(`Vote detected`))
+    .then(console.log(`Vote is on`))
     .catch(err => console.log(err));
 });
 
-app.post("/answers/add", (req, res) => {
+app.post("/api/answers/add", (req, res) => {
   let answer = new Answer(req.body);
   answer.save().then(answer => {
     if (err) {
@@ -106,7 +106,7 @@ app.use(
   "/questions",
   questionRoutes,
   answerRoutes
-); /*We add the router as a middleware and will take control of request starting with path /questions:*/
+); 
 
 app.listen(PORT, function() {
   console.log("Server is running on Port: " + PORT);
