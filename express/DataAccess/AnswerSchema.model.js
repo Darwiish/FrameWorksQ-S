@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+let date = new Date().toLocaleString();
 
 let answer = new Schema({
 
@@ -17,7 +18,7 @@ let answer = new Schema({
     },
     created_date: {
         type : String,
-        default : date
+        default : date,
     },
     question: {
         type: mongoose.Schema.Types.ObjectId,
