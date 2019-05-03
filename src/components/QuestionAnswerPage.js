@@ -20,7 +20,7 @@ class QuestionAnswerPage extends Component {
       answers: [],
       name: "",
       input: "",
-      created_date: "",
+      created_date:"",
       replyTo: ""
     };
 
@@ -54,6 +54,7 @@ class QuestionAnswerPage extends Component {
     this.setState({
       name: "",
       input: "",
+      created_date:"",
       replyTo: this.props.match.params.id,
       votes: 0
     });
