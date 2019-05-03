@@ -46,9 +46,10 @@ class QuestionAnswerPage extends Component {
       replyTo: this.props.match.params.id,
       votes: 0
     };
-
+    const URL_ANSWER = process.env.REACT_APP_API_ANSWERS;
+    //"http://localhost:4000/api/answers/add"
     axios
-      .post("http://localhost:4000/api/answers/add", newAnswer)
+      .post(URL_ANSWER, newAnswer)
       .then(res => console.log(res.data));
 
     this.setState({
@@ -63,16 +64,19 @@ class QuestionAnswerPage extends Component {
     this.setState({
       replyTo: this.props.match.params.id
     });
-    axios.get("http://localhost:4000/api/questions/").then(response => {
+    const URL_QUESTION = process.env.REACT_APP_API_QUESTION;
+  //  "http://localhost:4000/api/questions/"
+    axios.get(URL_QUESTION).then(response => {
       this.setState({
         currentQuestion: response.data.find(
           elm => elm._id === this.props.match.params.id
         )
       });
     });
-
+    const URL_ANSWER = process.env.REACT_APP_API_ANSWERS;
+    //"http://localhost:4000/api/answers/"
     axios
-      .get("http://localhost:4000/api/answers/")
+      .get(URL_ANSWER)
       .then(response => {
         this.setState({ answers: response.data });
       })

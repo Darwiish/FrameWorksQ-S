@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-// mongoose.connect("mongodb+srv://admin:admin1@cluster0-jcmuy.mongodb.net/test?retryWrites=true", {
+require('dotenv').config()
+const MONGO_URL = process.env.REACT_APP_MONGO_URL;
 
-
-mongoose.connect("mongodb+srv://admin:admin1@cluster0-jcmuy.mongodb.net/test?retryWrites=true", {
+mongoose.connect(MONGO_URL, {
     useNewUrlParser: true
   });
   const connection = mongoose.connection;

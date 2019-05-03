@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors"); /* CORS is a node.js package for providing a Connect/Express middleware that can be used to */
 const mongoose = require("mongoose");
 const DbConnection = require("./DataAccess/DbConnection");
-const PORT = 4000;
+require('dotenv').config();
+const PORT = (process.env.PORT || 4000);
 const answerRoutes = express.Router();
 const questionRoutes = express.Router(); /*we create an instance of the Express Router by adding this code*/
 app.use(cors());

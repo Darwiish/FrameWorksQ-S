@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-let date = new Date().toLocaleString();
+let date = new Date().toLocaleDateString();
 
 let answer = new Schema({
   name: {

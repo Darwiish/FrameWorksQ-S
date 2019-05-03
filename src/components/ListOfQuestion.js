@@ -21,8 +21,11 @@ class ListOfQuestion extends Component {
   }
 
   componentDidMount() {
+    const URL_QUESTION = process.env.REACT_APP_API_QUESTION;
+    //const URL_ANSWERS = process.env.REACT_APP_API_ANSWERS;
+
     axios
-      .get("http://localhost:4000/api/questions/")
+      .get(URL_QUESTION)
       .then(response => {
         this.setState({ questions: response.data });
       })
