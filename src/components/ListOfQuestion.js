@@ -22,8 +22,6 @@ class ListOfQuestion extends Component {
 
   componentDidMount() {
     const URL_QUESTION = process.env.REACT_APP_API_QUESTION;
-    //const URL_ANSWERS = process.env.REACT_APP_API_ANSWERS;
-
     axios
       .get(URL_QUESTION)
       .then(response => {
