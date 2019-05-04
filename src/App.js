@@ -19,7 +19,7 @@ class App extends Component {
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
-            <Link to="/QList" className="nav-link">
+            <Link to="/questions" className="nav-link">
               All Questions
             </Link>
             
@@ -31,7 +31,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={QuestionPage} />
             <Route path="/post/" component={QuestionPage} />
-            <Route path="/QList/" component={ListOfQuestion} />
+            <Route path="/questions/" component={ListOfQuestion} />
             <Route
               path="/QAnswer/:id"
               render={props => <QuestionAnswerPage {...props} />}
