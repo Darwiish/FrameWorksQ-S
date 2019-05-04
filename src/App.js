@@ -29,9 +29,9 @@ class App extends Component {
           </nav>
           <br />
           <Switch>
-            <Route path="/" exact component={QuestionPage} />
-            <Route path="/post/" component={QuestionPage} />
-            <Route path="/questions/" component={ListOfQuestion} />
+            <Route exact path="/" render={props => <QuestionPage />} />
+            <Route exact path="/questions/" render={props => <ListOfQuestion />} />
+            <Route path="/post/" render={props => <QuestionPage />} />
             <Route
               path="/QAnswer/:id"
               render={props => <QuestionAnswerPage {...props} />}
