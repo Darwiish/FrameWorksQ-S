@@ -23,7 +23,7 @@ class App extends Component {
               All Questions
             </Link>
             
-            <Link to="/post" className="nav-link">
+            <Link to="/ask" className="nav-link">
               Ask a question
             </Link>
           </nav>
@@ -31,7 +31,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={props => <QuestionPage />} />
             <Route exact path="/questions/" render={props => <ListOfQuestion />} />
-            <Route exact path="/post/" render={props => <QuestionPage />} />
+            <Route exact path="/ask/" render={props => <QuestionPage />} />
             <Route
               path="/QAnswer/:id"
               render={props => <QuestionAnswerPage {...props} />}
