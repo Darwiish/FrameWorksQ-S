@@ -9,7 +9,7 @@ const Question = props => (
     <td>{props.question.input}</td>
     <td>{props.question.created_date}</td>
     <td>
-       <Link to={"/QAnswer/" + props.question._id}>Replay</Link>
+       <Link to={"/QAnswer/" + props.question._id} className="btn btn-success">Reply</Link>
     </td>
   </tr>
 );

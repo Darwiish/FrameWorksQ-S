@@ -42,7 +42,7 @@ body {
   line-height: 1,6;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 1em;
-  font-weight: 800;
+  /* font-weight: 800; */
 }
 
 .container {
@@ -53,4 +53,9 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-
+/* 
+[type=button] {
+  background-color: white;
+  border: none;
+  color: black;
+} */

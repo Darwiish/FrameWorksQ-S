@@ -63,7 +63,7 @@ class QuestionPage extends Component {
           <label>What is your name: </label>
           <input
             type="text"
-            className="form-control"
+            className="form-control col-md-6"
             value={this.state.name}
             onChange={this.handleNameChange}
            // onChange={e => this.handleNameChange({ name: e.target.value })}
@@ -73,7 +73,7 @@ class QuestionPage extends Component {
           <label>What is your question title:: </label>
           <input
             type="text"
-            className="form-control"
+            className="form-control col-md-6"
             value={this.state.title}
             onChange={this.handleTitleChange}
           />
@@ -83,7 +83,7 @@ class QuestionPage extends Component {
             <label>Ask Question: </label>
             <textarea
               text="textarea"
-              className="form-control"
+              className="form-control col-md-6"
               value={this.state.input}
               onChange={this.handleInputChange}
             />

@@ -39,7 +39,7 @@ class Votes extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.vote} className="">Upvote</button>
+        <button onClick={this.vote} className="btn btn-success">Upvote</button>
       </div>
     );
   }

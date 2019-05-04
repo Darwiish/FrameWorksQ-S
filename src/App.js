@@ -19,8 +19,8 @@ class App extends Component {
         </div>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to="/post" className="navbar-brand">
-              Question Page
+            <Link to="/post" className="">
+              Ask a question
             </Link>
             <div className="collpase navbar-collapse">
               <ul className="navbar-nav mr-auto">
@@ -48,4 +48,3 @@ class App extends Component {
   }
 }
 export default App;
-
