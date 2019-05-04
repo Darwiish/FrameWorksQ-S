@@ -47,7 +47,7 @@ class QuestionPage extends Component {
     };
   //  http://localhost:4000/api/questions/add
     const URL_QUESTION = process.env.REACT_APP_API_QUESTION;
-    axios.post(`${URL_QUESTION}/add`, newQuestion)
+    axios.post(`${URL_QUESTION}add`, newQuestion)
             .then(res => console.log(res.data));
 
     this.setState({
