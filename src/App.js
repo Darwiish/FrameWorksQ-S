@@ -31,7 +31,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={props => <QuestionPage />} />
             <Route exact path="/questions/" render={props => <ListOfQuestion />} />
-            <Route path="/post/" render={props => <QuestionPage />} />
+            <Route exact path="/post/" render={props => <QuestionPage />} />
             <Route
               path="/QAnswer/:id"
               render={props => <QuestionAnswerPage {...props} />}
