@@ -46,7 +46,7 @@ class QuestionAnswerPage extends Component {
       replyTo: this.props.match.params.id,
       votes: 0
     };
-    const URL_ANSWER = process.env.REACT_APP_API_ANSWERS;
+    const URL_ANSWER = process.env.REACT_APP_API_ANSWER;
     //"http://localhost:4000/api/answers/add"
     axios
       .post(URL_ANSWER, newAnswer)
@@ -73,7 +73,7 @@ class QuestionAnswerPage extends Component {
         )
       });
     });
-    const URL_ANSWER = process.env.REACT_APP_API_ANSWERS;
+    const URL_ANSWER = process.env.REACT_APP_API_ANSWER;
     //"http://localhost:4000/api/answers/"
     axios
       .get(URL_ANSWER)

@@ -9,8 +9,7 @@ class Votes extends Component {
   }
 
   addVote(value) {
-    // const URL = process.env.REACT_APP_API_ANSWERS;
-    const URL = `http://localhost:4000/api/answers/${this.props.id}`;
+    const URL = process.env.REACT_APP_API_ANSWER;
 
     let body = {
       answer_id: this.props.id,
