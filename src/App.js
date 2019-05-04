@@ -18,18 +18,14 @@ class App extends Component {
         </div>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to="/post" className="">
+
+            <Link to="/QList" className="nav-link">
+              All Questions
+            </Link>
+            
+            <Link to="/post" className="nav-link">
               Ask a question
             </Link>
-            <div className="collpase navbar-collapse">
-              <ul className="navbar-nav mr-auto">
-                <li className="navbar-item">
-                  <Link to="/QList" className="nav-link">
-                    All Questions
-                  </Link>
-                </li>
-              </ul>
-            </div>
           </nav>
           <br />
           <Switch>

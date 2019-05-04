@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color:blue;
+  /* background-color:blue; */
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
 }
 
 body {
-  background: #92BDE7;
+  /* background: #92BDE7; */
   color: black;
   line-height: 1,6;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
