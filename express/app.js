@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const morgan = require('morgan');
 const cors = require("cors"); /* CORS is a node.js package for providing a Connect/Express middleware that can be used to */
 const mongoose = require("mongoose");
 const DbConnection = require("./DataAccess/DbConnection");
@@ -10,6 +11,11 @@ const answerRoutes = express.Router();
 const questionRoutes = express.Router(); /*we create an instance of the Express Router by adding this code*/
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use(bodyParser.json()); // Parse JSON from the request body
+app.use(morgan('combined')); // Log all requests to the console
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../build')));
 
 let Question = require("./DataAccess/QuestionSchema.model");
 let Answer = require("./DataAccess/AnswerSchema.model");
