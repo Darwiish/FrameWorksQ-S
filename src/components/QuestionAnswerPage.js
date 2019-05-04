@@ -49,7 +49,7 @@ class QuestionAnswerPage extends Component {
     const URL_ANSWER = process.env.REACT_APP_API_ANSWER;
     //"http://localhost:4000/api/answers/add"
     axios
-      .post(URL_ANSWER, newAnswer)
+      .post(`${URL_ANSWER}/add`, newAnswer)
       .then(res => console.log(res.data));
 
     this.setState({
