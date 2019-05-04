@@ -92,7 +92,7 @@ class QuestionPage extends Component {
             <input
               type="submit"
               value="Submit Question"
-              className="btn btn-success btn-block"
+              className="btn btn-success"
             />
           </div>
         </form>
