@@ -164,7 +164,4 @@ class QuestionAnswerPage extends Component {
   }
 }
 export default QuestionAnswerPage;
-    //"http://localhost:4000/api/answers/add"
-  //  "http://localhost:4000/api/questions/"
-    //"http://localhost:4000/api/answers/"
-  //  http://localhost:4000/api/questions/add
+   
