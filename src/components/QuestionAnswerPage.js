@@ -40,6 +40,9 @@ class QuestionAnswerPage extends Component {
     this.setState({ input: event.target.value });
   }
 
+ /*This method is needed to handle the submit event of the form 
+       which will be implemented to create a new Answes*/
+
   handleSubmit = event => {
     event.preventDefault();
 
@@ -51,7 +54,6 @@ class QuestionAnswerPage extends Component {
       votes: 0
     };
     const URL_ANSWER = process.env.REACT_APP_API_ANSWER;
-    //"http://localhost:4000/api/answers/add"
     axios
       .post(`${URL_ANSWER}add`, newAnswer)
       .then(res => console.log(res.data));
@@ -69,7 +71,6 @@ class QuestionAnswerPage extends Component {
       replyTo: this.props.match.params.id
     });
     const URL_QUESTION = process.env.REACT_APP_API_QUESTION;
-  //  "http://localhost:4000/api/questions/"
     axios.get(URL_QUESTION).then(response => {
       this.setState({
         currentQuestion: response.data.find(
@@ -78,7 +79,6 @@ class QuestionAnswerPage extends Component {
       });
     });
     const URL_ANSWER = process.env.REACT_APP_API_ANSWER;
-    //"http://localhost:4000/api/answers/"
     axios
       .get(URL_ANSWER)
       .then(response => {
@@ -160,3 +160,7 @@ class QuestionAnswerPage extends Component {
   }
 }
 export default QuestionAnswerPage;
+    //"http://localhost:4000/api/answers/add"
+  //  "http://localhost:4000/api/questions/"
+    //"http://localhost:4000/api/answers/"
+  //  http://localhost:4000/api/questions/add
