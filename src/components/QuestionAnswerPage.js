@@ -24,10 +24,14 @@ class QuestionAnswerPage extends Component {
       replyTo: ""
     };
 
+    /* Because in the three implemented methods we’re dealing with the component’s 
+        state object we need to make sure to bind those methods to (this)  */
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.onSubmit = this.handleSubmit.bind(this);
   }
+
+    /*  This methods will be used to update the state properties */
   handleNameChange(event) {
     this.setState({ name: event.target.value });
   }
@@ -100,7 +104,6 @@ class QuestionAnswerPage extends Component {
           <thead>
             <tr>
               <th>UserName</th>
-              <th>Title</th>
               <th>Question</th>
               <th>DateTime</th>
             </tr>
@@ -117,7 +120,7 @@ class QuestionAnswerPage extends Component {
           <thead>
             <tr>
               <th>UserName</th>
-              <th>input</th>
+              <th>Answer</th>
               <th>DateTime</th>
               <th>Votes</th>
             </tr>

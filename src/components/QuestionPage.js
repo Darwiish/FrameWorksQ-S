@@ -66,7 +66,6 @@ class QuestionPage extends Component {
             className="form-control col-md-6"
             value={this.state.name}
             onChange={this.handleNameChange}
-           // onChange={e => this.handleNameChange({ name: e.target.value })}
           />
         </div>
         <div className="form-group">
