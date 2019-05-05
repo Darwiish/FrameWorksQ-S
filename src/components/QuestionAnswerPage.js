@@ -121,7 +121,6 @@ class QuestionAnswerPage extends Component {
             <tr>
               <th>UserName</th>
               <th>Answer</th>
-              <th>DateTime</th>
               <th>Votes</th>
             </tr>
           </thead>
