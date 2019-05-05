@@ -103,11 +103,14 @@ class QuestionAnswerPage extends Component {
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>
             <tr>
+
               <th>UserName</th>
+              <th>Title</th>
               <th>Question</th>
               <th>DateTime</th>
             </tr>
             <tr>
+            <th>{this.state.currentQuestion.name}</th>
               <th>{this.state.currentQuestion.title}</th>
               <th>{this.state.currentQuestion.input}</th>
               <th>{this.state.currentQuestion.created_date}</th>
