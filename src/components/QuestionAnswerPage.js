@@ -120,7 +120,7 @@ class QuestionAnswerPage extends Component {
           <thead>
             <tr>
               <th>UserName</th>
-              <th>Answer</th>
+              <th>Answers</th>
               <th>Votes</th>
             </tr>
           </thead>
