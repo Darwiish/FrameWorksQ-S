@@ -45,7 +45,7 @@ class ListOfQuestion extends Component {
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>
             <tr>
-              <th>Name</th>
+              <th>UserName</th>
               <th>Title</th>
               <th>Question</th>
               <th>DateTime</th>
