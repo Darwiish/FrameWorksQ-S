@@ -15,7 +15,7 @@ let answer = new Schema({
   votes: {
     type: Number
   },
-  created_date: {
+    date: {
     type: String,
     default: date
   },

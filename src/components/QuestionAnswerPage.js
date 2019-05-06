@@ -7,7 +7,7 @@ const Answer = props => (
   <tr>
     <td>{props.answers.name}</td>
     <td>{props.answers.input}</td>
-    <td>{props.answers.created_date}</td>
+    <td>{props.answers.date}</td>
     <td>{props.answers.votes} <Votes id={props.answers._id} votes={props.answers.votes}/></td>
   </tr>
 );
@@ -20,7 +20,7 @@ class QuestionAnswerPage extends Component {
       answers: [],
       name: "",
       input: "",
-      created_date:"",
+      date:"",
       replyTo: ""
     };
 
@@ -49,7 +49,7 @@ class QuestionAnswerPage extends Component {
     const newAnswer = {
       name: this.state.name,
       input: this.state.input,
-      created_date: this.state.created_date,
+      date: this.state.date,
       replyTo: this.props.match.params.id,
       votes: 0
     };
@@ -61,7 +61,7 @@ class QuestionAnswerPage extends Component {
     this.setState({
       name: "",
       input: "",
-      created_date:"",
+      date:"",
       replyTo: this.props.match.params.id,
       votes: 0
     });
