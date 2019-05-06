@@ -6,7 +6,7 @@ const cors = require("cors"); /* CORS is a node.js package for providing a Conne
 const mongoose = require("mongoose");
 const DbConnection = require("./DataAccess/DbConnection");
 require('dotenv').config();
-const PORT = (process.env.PORT || 4000);
+const PORT = (process.env.PORT || 8080);
 const answerRoutes = express.Router();
 const questionRoutes = express.Router(); /*we create an instance of the Express Router by adding this code*/
 app.use(cors());
