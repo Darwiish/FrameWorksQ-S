@@ -113,7 +113,7 @@ class QuestionAnswerPage extends Component {
             <th>{this.state.currentQuestion.name}</th>
               <th>{this.state.currentQuestion.title}</th>
               <th>{this.state.currentQuestion.input}</th>
-              <th>{this.state.currentQuestion.created_date}</th>
+              <th>{this.state.currentQuestion.date}</th>
             </tr>
           </thead>
           <tbody />
