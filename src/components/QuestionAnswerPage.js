@@ -7,7 +7,7 @@ const Answer = props => (
   <tr>
     <td>{props.answers.name}</td>
     <td>{props.answers.input}</td>
-    <td>{props.answers.created_date}</td>
+    <td>{props.answers.date}</td>
     <td>{props.answers.votes} <Votes id={props.answers._id} votes={props.answers.votes}/></td>
   </tr>
 );
