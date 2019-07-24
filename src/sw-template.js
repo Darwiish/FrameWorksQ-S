@@ -18,7 +18,7 @@ if ('function' === typeof importScripts) {
       workbox.routing.registerRoute(
           /\.(?:png|gif|jpg|jpeg)$/,
           workbox.strategies.cacheFirst({
-              cacheName: 'images',
+              cacheName: 'files',
               plugins: [
                   new workbox.expiration.Plugin({
                       maxEntries: 60,
@@ -29,13 +29,13 @@ if ('function' === typeof importScripts) {
       );
 
       // Background sync 
-      const bgSyncPlugin = new workbox.backgroundSync.Plugin('Questionnaire Background Sync', {
+      const bgSyncPlugin = new workbox.backgroundSync.Plugin('Background Sync', {
           maxRetentionTime: 24 * 60 // Retry for max of 24 Hours
       });
 
       // have a look at this https://developers.google.com/web/tools/workbox/modules/workbox-background-sync
       workbox.routing.registerRoute(
-         "/api/answers",
+         "/api/questions",
           new workbox.strategies.NetworkOnly({
               plugins: [bgSyncPlugin]
           }),
