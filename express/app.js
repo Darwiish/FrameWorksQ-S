@@ -108,6 +108,10 @@ app.post("/api/answers/add", (req, res) => {
   });
 });
 
+app.get('*', (request, response) => {
+  response.sendFile(path.join(__dirname, '../build', 'index.html'));
+});
+
 app.use(
   "/questions",
   questionRoutes,
