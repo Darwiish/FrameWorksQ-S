@@ -29,7 +29,7 @@ if ('function' === typeof importScripts) {
       );
 
       workbox.router.registerRoute(
-        `/api/questions/(.*)`,
+        `${API}/api/questions`,
         workbox.strategies.cacheFirst({
           cacheName: "questions",
           cacheExpiration: {
