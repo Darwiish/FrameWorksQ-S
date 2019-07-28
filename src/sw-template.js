@@ -28,6 +28,17 @@ if ('function' === typeof importScripts) {
           })
       );
 
+      workbox.router.registerRoute(
+        `/api/questions/(.*)`,
+        workbox.strategies.cacheFirst({
+          cacheName: "questions",
+          cacheExpiration: {
+            maxEntries: 30
+          },
+          cacheableResponse: { statuses: [0, 200] }
+        })
+      );
+
       // Background sync 
       const bgSyncPlugin = new workbox.backgroundSync.Plugin('Background Sync', {
           maxRetentionTime: 24 * 60 // Retry for max of 24 Hours
