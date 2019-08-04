@@ -16,7 +16,7 @@ if ("function" === typeof importScripts) {
 
     // Cache first strategy
     workbox.routing.registerRoute(
-      /\.(?:png|gif|jpg|jpeg)$/,
+      /\.(?:png|gif|jpg|jpeg|svg|json|js)$/,
       workbox.strategies.cacheFirst({
         cacheName: "files",
         plugins: [
@@ -36,6 +36,26 @@ if ("function" === typeof importScripts) {
       }),
       "GET"
     );
+
+    //Cache JS files
+    workbox.routing.registerRoute(
+      new RegExp('.*\.js'),
+      workbox.strategies.cacheFirst()
+  );
+
+//Cache API response
+workbox.routing.registerRoute(
+   new RegExp('\https://react-js-y.herokuapp.com/api\/(xyz|abc|def)'),
+       workbox.strategies.staleWhileRevalidate({
+       cacheName: 'apiCache',
+           plugins : [
+              new workbox.expiration.Plugin({
+                  maxEntries: 100,
+                  maxAgeSeconds: 30 * 60 // 30 Minutes
+               })
+          ]
+  })
+);
 
     // Background sync
     const bgSyncPlugin = new workbox.backgroundSync.Plugin("Background Sync", {
