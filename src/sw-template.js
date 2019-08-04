@@ -30,7 +30,7 @@ if ("function" === typeof importScripts) {
 
     workbox.routing.registerRoute(
       "/api/(.*)",
-      workbox.strategies.StaleWhileRevalidate({
+      workbox.strategies.NetworkFirst({
         cacheName: "questions",
         cacheableResponse: { statuses: [0, 200] }
       }),
