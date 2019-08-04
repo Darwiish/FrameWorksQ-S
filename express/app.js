@@ -1,20 +1,20 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const morgan = require('morgan');
+const morgan = require("morgan");
 const cors = require("cors"); /* CORS is a node.js package for providing a Connect/Express middleware that can be used to */
 const mongoose = require("mongoose");
 const DbConnection = require("./DataAccess/DbConnection");
-require('dotenv').config();
-const PORT = (process.env.PORT || 8080);
+require("dotenv").config();
+const PORT = process.env.PORT || 8080;
 const answerRoutes = express.Router();
 const questionRoutes = express.Router(); /*we create an instance of the Express Router by adding this code*/
 app.use(cors());
 
 app.use(bodyParser.json()); // Parse JSON from the request body
-app.use(morgan('combined')); // Log all requests to the console
-const path = require('path');
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(morgan("combined")); // Log all requests to the console
+const path = require("path");
+app.use(express.static(path.join(__dirname, "../build")));
 
 let Question = require("./DataAccess/QuestionSchema.model");
 let Answer = require("./DataAccess/AnswerSchema.model");
@@ -40,7 +40,6 @@ app.use((req, res, next) => {
 
 /****** Helper functions *****/
 //
-
 
 /****** Routes *****/
 app.get("/api/questions", (req, res) => {
@@ -69,8 +68,6 @@ app.put("/api/questions/:id", (req, res) => {
   res.json(getQuestionFromId(req.params.id));
 });
 
-
-
 app.get("/api/answers", (req, res) => {
   Answer.find((err, answers) => {
     res.json(answers);
@@ -89,7 +86,7 @@ app.get("/api/questions/:id/answers", (req, res) => {
   });
 });
 
-app.put('/api/answers/:id', (req, res) => {
+app.put("/api/answers/:id", (req, res) => {
   Answer.findOneAndUpdate({ _id: req.body.answer_id }, req.body, { new: true })
     .then(function(vote) {
       res.send(vote);
@@ -108,15 +105,11 @@ app.post("/api/answers/add", (req, res) => {
   });
 });
 
-app.get('*', (request, response) => {
-  response.sendFile(path.join(__dirname, '../build', 'index.html'));
+app.get("*", (request, response) => {
+  response.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
-app.use(
-  "/questions",
-  questionRoutes,
-  answerRoutes
-); 
+app.use("/questions", questionRoutes, answerRoutes);
 
 app.listen(PORT, function() {
   console.log("Server is running on Port: " + PORT);
