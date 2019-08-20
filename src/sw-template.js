@@ -16,20 +16,21 @@ if ("function" === typeof importScripts) {
 
     // Cache first strategy
     workbox.routing.registerRoute(
-      /\.(?:png|gif|jpg|jpeg|svg|json|js)$/,
+      /\.(?:png|gif|jpg|jpeg|svg|json|js)$/, // 
       workbox.strategies.cacheFirst({
         cacheName: "files",
         plugins: [
           new workbox.expiration.Plugin({
             maxEntries: 60,
-            maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
+            maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days * 24H * 60min * 60sec
           })
         ]
       })
     );
 
+    // caching the GET requests
     workbox.routing.registerRoute(
-      "/api/(.*)",
+      "/api/(.*)", // 
       workbox.strategies.cacheFirst({
         cacheName: "questions",
         cacheableResponse: { statuses: [0, 200] }
@@ -64,7 +65,7 @@ if ("function" === typeof importScripts) {
 
     // have a look at this https://developers.google.com/web/tools/workbox/modules/workbox-background-sync
     workbox.routing.registerRoute(
-      "/api/questions",
+      "/api/questions/add",
       new workbox.strategies.NetworkOnly({
         plugins: [bgSyncPlugin]
       }),

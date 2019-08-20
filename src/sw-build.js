@@ -3,11 +3,13 @@ const workboxBuild = require('workbox-build');
 const buildSW = () => {
   // This will return a Promise
   return workboxBuild.injectManifest({
+    // this is the entry point
     swSrc: 'src/sw-template.js', // this is your sw template file
+    // this is the resulting sw
     swDest: 'build/sw.js', // this will be created in the build step
     globDirectory: 'build',
     globPatterns: [
-      '**\/*.{js,css,html,png,xhr,json}',
+      '**\/*.{js,css,html,png,xhr,json}', // check for file extensions
     ]
   }).then(({count, size, warnings}) => {
     // Optionally, log any warnings and details.
