@@ -31,7 +31,7 @@ if ("function" === typeof importScripts) {
     // caching the GET requests
     workbox.routing.registerRoute(
       "/api/(.*)", // 
-      workbox.strategies.NetworkFirst({
+      workbox.strategies.cacheFirst({
         cacheName: "questions",
         cacheableResponse: { statuses: [0, 200] }
       }),
