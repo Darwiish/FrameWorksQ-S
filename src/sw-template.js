@@ -41,7 +41,7 @@ if ("function" === typeof importScripts) {
     //Cache JS files
     workbox.routing.registerRoute(
       new RegExp(".*.js"),
-      workbox.strategies.NetworkFirst()
+      workbox.strategies.cacheFirst()
     );
 
     //Cache API response
